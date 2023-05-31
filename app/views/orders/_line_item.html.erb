@@ -1,0 +1,16 @@
+<tr>
+  <td>
+  <img src="<%= item.product.image.tiny %>" alt="Product Image">
+  </td>
+  <td>
+    <h4><%= item.product.name %></h4>
+    <br>
+    <p><%= item.product.description %></p>
+  </td>
+  <td>
+    <%= item.quantity %>
+  </td>
+  <td>
+    <%= item.product.price * item.quantity %>
+  </td>
+</tr>
