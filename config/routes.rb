@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
+  resource :about, :controller => 'about', only: [:show]
 
   namespace :admin do
     root to: 'dashboard#show'
