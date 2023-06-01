@@ -22,6 +22,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <% if current_user %>
+      Signed in as <%= current_user.first_name %> </li> 
+      <li> <%= link_to "Logout", '/logout'  %> </li>
+    <% else %>
+      <%= link_to 'Login', '/login' %> </li> 
+      <li><%= link_to 'Signup', '/signup' %></li>
+  <% end %>
       
         <%# <li class="nav-item dropdown">
           <a
@@ -45,7 +52,9 @@
         </li> %>
       </ul>
       <ul class="navbar-nav">
+      
       <li><%= link_to 'About Us', "/about", class:"nav-link" %> </li>
+      
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
