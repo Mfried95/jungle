@@ -10,12 +10,14 @@ Rails.application.routes.draw do
     post   :remove_item
   end
 
-  resources :orders, only: [:create, :show]
   resource :about, :controller => 'about', only: [:show]
+
+  resources :orders, only: [:create, :show]
 
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    resources :categories, only: [:index, :create, :new] 
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
